@@ -436,7 +436,7 @@ class BinariesCheck(AbstractCheck):
 
         if setgid and setuid and not setgroups:
             is_uid = stat.S_ISUID & pkgfile.mode
-            self.output.add_info('W' if is_uid else 'E', pkg, 'missing-call-to-setgroups-before-setuid', pkgfile.name)
+            self.output.add_info('E' if is_uid else 'W', pkg, 'missing-call-to-setgroups-before-setuid', pkgfile.name)
 
         if mktemp:
             self.output.add_info('E', pkg, 'call-to-mktemp', pkgfile.name)
