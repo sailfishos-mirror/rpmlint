@@ -1774,3 +1774,17 @@ type     = "dbus"
 path     = "/usr/share/dbus-1/system.d/org.shadowblip.InputPlumber.conf"
 digester = "xml"
 hash     = "37b05cfeb384fe7f696d7a090153eb464dbc02917f721c01241d655f43a433bb"
+
+[[FileDigestGroup]]
+package  = "intel-lpmd"
+note     = "Smart power management for newer generation Intel CPUs"
+bug      = "bsc#1255977"
+type     = "dbus"
+[[FileDigestGroup.digests]]
+path     = "/usr/share/dbus-1/system-services/org.freedesktop.intel_lpmd.service"
+digester = "shell"
+hash     = "df98df90f9f67db05808de4415f06f32029e4b6047e721a0b1a1cb88e078c076"
+[[FileDigestGroup.digests]]
+path     = "/usr/share/dbus-1/system.d/org.freedesktop.intel_lpmd.conf"
+digester = "xml"
+hash     = "b729ad6c259db3460fa6c419fb24dd9512cbd7700ac6a254f7621c3300d56b6a"
