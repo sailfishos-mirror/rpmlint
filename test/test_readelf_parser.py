@@ -257,7 +257,7 @@ def test_call_setgroups(binariescheck):
         pkg.files[pkgfile.name] = pkgfile
         run_elf_checks(test, pkg, pkgfile)
         out = output.print_results(output.results)
-        assert 'E: missing-call-to-setgroups-before-setuid /bin/call-setgroups' in out
+        assert 'W: missing-call-to-setgroups-before-setuid /bin/call-setgroups' in out
 
 
 @pytest.mark.skipif(not IS_X86_64, reason='x86-64 only')

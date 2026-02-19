@@ -293,7 +293,7 @@ def test_invalid_ldconfig_symlink(tmp_path, package, binariescheck):
     assert 'E: invalid-ldconfig-symlink' in out
     # executable doesn't call mktemp, setuid or gethostbyname
     assert 'E: call-to-mktemp' not in out
-    assert 'E: missing-call-to-setgroups-before-setuid' not in out
+    assert 'W: missing-call-to-setgroups-before-setuid' not in out
     assert 'W: binary-or-shlib-calls-gethostbyname' not in out
     # it's not statically linked either
     assert 'E: statically-linked-binary' not in out
@@ -316,7 +316,7 @@ def test_multiple_errors(tmp_path, package, binariescheck):
     test.check(get_tested_package(package, tmp_path))
     out = output.print_results(output.results)
     assert 'E: call-to-mktemp' in out
-    assert 'E: missing-call-to-setgroups-before-setuid' in out
+    assert 'W: missing-call-to-setgroups-before-setuid' in out
     assert 'W: binary-or-shlib-calls-gethostbyname' in out
 
 
