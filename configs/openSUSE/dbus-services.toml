@@ -1598,6 +1598,21 @@ path     = "/usr/share/dbus-1/system-services/org.gnome.RemoteDesktop.Configurat
 digester = "shell"
 hash     = "ecc8ae6fe29a9ddc6c1f598c8558245b16d8280cd99caecc3ab268c428e1f8ff"
 
+# TODO: merge this with the entry above once grd-50 is in Factory
+[[FileDigestGroup]]
+package  = "gnome-remote-desktop"
+note     = "system wide remote desktop access to the display manager"
+bug      = "bsc#1258407"
+type     = "dbus"
+[[FileDigestGroup.digests]]
+path     = "/usr/share/dbus-1/system.d/org.gnome.RemoteDesktop.conf"
+digester = "xml"
+hash     = "cdefbd06ed5538f29c46f01a6143202c2f4ef7e42a209313bcdf680e26049d95"
+[[FileDigestGroup.digests]]
+path     = "/usr/share/dbus-1/system-services/org.gnome.RemoteDesktop.Configuration.service"
+digester = "shell"
+hash     = "ecc8ae6fe29a9ddc6c1f598c8558245b16d8280cd99caecc3ab268c428e1f8ff"
+
 [[FileDigestGroup]]
 package  = "kdeplasma6-addons"
 note     = "A small helper that allows to change LED colors via /sys/class/led"
