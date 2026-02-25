@@ -169,17 +169,18 @@ digester = "xml"
 hash = "fb49f423c6f0c6c461d4052ee8245a637933fdb6d057fc5e2f9599d33fbc62c8"
 
 [[FileDigestGroup]]
-package = "rtkit"
-type = "dbus"
-note = "legacy: not audited"
+package  = "rtkit"
+type     = "dbus"
+note     = "allows active session users to apply realtime scheduling to their processes/thread, within certain limits"
+bug      = "bsc#1258681"
 [[FileDigestGroup.digests]]
-path = "/usr/share/dbus-1/system.d/org.freedesktop.RealtimeKit1.conf"
+path     = "/usr/share/dbus-1/system.d/org.freedesktop.RealtimeKit1.conf"
 digester = "xml"
-hash = "326a2e088aead145cd581c94dec2d7c64510e84c2f877e0a50ceea168cc6c9af"
+hash     = "ec4b0994e9945dc3f5c8002a78a158906b55c6cd36dc5dc0ed6e766525a26caa"
 [[FileDigestGroup.digests]]
-path = "/usr/share/dbus-1/system-services/org.freedesktop.RealtimeKit1.service"
+path     = "/usr/share/dbus-1/system-services/org.freedesktop.RealtimeKit1.service"
 digester = "shell"
-hash = "8a90ad6824da4bc87d770b552f83212e47b8343afb0dccee828ba3e63b099267"
+hash     = "8a90ad6824da4bc87d770b552f83212e47b8343afb0dccee828ba3e63b099267"
 
 [[FileDigestGroup]]
 package = "wpa_supplicant"
