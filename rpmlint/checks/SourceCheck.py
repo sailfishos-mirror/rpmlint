@@ -8,12 +8,16 @@ class SourceCheck(AbstractCheck):
     Validate files in a source package.
     """
     source_regex = re.compile(r'\.(tar|tgz)$')
+
+    # Regex patterns. Applied to a string from file(1) tool.
     compressed_fileext_magic = {
-        'xz': 'XZ compressed',
-        'gz': 'gzip compressed',
-        'tgz': 'gzip compressed',
-        'bz2': 'bzip2 compressed',
-        'zst': 'ZSTD compressed',
+        'xz': r'XZ compressed',
+        'gz': r'gzip compressed',
+        'tgz': r'gzip compressed',
+        'bz2': r'bzip2 compressed',
+        'zst': r'(ZSTD|Zstandard) compressed',
+        'zstd': r'(ZSTD|Zstandard) compressed',
+        'zip': r'Zip archive data',
     }
 
     def __init__(self, config, output):
@@ -45,12 +49,16 @@ class SourceCheck(AbstractCheck):
         """
         Check if the filename extension is the same as what file(1) says.
         """
+        if not pkgfile.magic:
+            return
         file_ext = fname.rpartition('.')[2]
-
-        if (file_ext in self.compressed_fileext_magic and
-            pkgfile.magic and
-                self.compressed_fileext_magic[file_ext] not in pkgfile.magic):
-            self.output.add_info('W', pkg, 'inconsistent-file-extension', fname)
+        pattern = self.compressed_fileext_magic.get(file_ext)
+        if pattern is None:
+            return  # file(1) pattern is unknown for given file extension
+        if re.match(pattern, pkgfile.magic, re.IGNORECASE):
+            return
+        self.output.add_info('W', pkg, 'inconsistent-file-extension',
+                             'file %r magic %r does not match %r' % (fname, pkgfile.magic, pattern))
 
     def _check_permissions(self, fname, pkgfile, pkg):
         """
