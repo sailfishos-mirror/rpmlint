@@ -58,7 +58,7 @@ class SourceCheck(AbstractCheck):
         if re.match(pattern, pkgfile.magic, re.IGNORECASE):
             return
         self.output.add_info('W', pkg, 'inconsistent-file-extension',
-                             'file {!r} magic {!r} does not match {!r}'.format(fname, pkgfile.magic, pattern))
+                             f'file {fname!r} magic {pkgfile.magic!r} does not match {pattern!r}')
 
     def _check_permissions(self, fname, pkgfile, pkg):
         """
