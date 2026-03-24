@@ -288,3 +288,13 @@ type     = "polkit"
 path     = "/usr/share/polkit-1/rules.d/50-run0-sudo.rules"
 digester = "default"
 hash     = "452adce8b04a88b42d0d9621e9258b5b2325ef44d01da6f65e93794d2b5f3579"
+
+[[FileDigestGroup]]
+package  = "cosmic-settings"
+note     = "Allow members of wheel/sudoers in a local session to adjust the keyboard layout, change hostname or talk to ModemManager"
+bug      = "bsc#1259402"
+type     = "polkit"
+[[FileDigestGroup.digests]]
+path     = "/usr/share/polkit-1/rules.d/cosmic-settings.rules"
+digester = "default"
+hash     = "a3ae4a1b46a191d4d851b262420e1fd4f9c09f29c9a855f662690807421f4d28"
