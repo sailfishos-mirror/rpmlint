@@ -36,7 +36,9 @@ class SignatureCheck(AbstractCheck):
         Print an error if there is no signature present. That means that
         there is no mention about any signature in the 'rpm -Kv' output.
         """
-        if retcode == 0 and not SignatureCheck.any_sig_regex.search(output):
+        # retcode is 1 for no-signature in rpm v6
+        # retcode is 0 for no-signature in rpm v4
+        if not SignatureCheck.any_sig_regex.search(output):
             self.output.add_info('E', pkg, 'no-signature')
 
     def _check_unknown_key(self, pkg, retcode, output):
