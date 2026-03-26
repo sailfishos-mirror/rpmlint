@@ -21,6 +21,7 @@ Checks = [
     "PkgConfigCheck",
     "PostCheck",
     "PythonCheck",
+    "SELinuxIndependentModuleCheck",
     "SignatureCheck",
     "SourceCheck",
     "SpecCheck",
