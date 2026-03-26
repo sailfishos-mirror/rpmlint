@@ -302,8 +302,8 @@ class TagsCheck(AbstractCheck):
 
         Args:
             deps: Variable to find PreReq and Requires tag
-            is_source: Variable to check if a package is of source type
             is_devel: The param to check if a package name ends with *-devel
+            is_source: Variable to check if a package is of source type
 
         Returns:
             Output info to STDOUT
