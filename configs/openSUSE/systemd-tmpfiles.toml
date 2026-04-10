@@ -206,3 +206,12 @@ path = "/usr/lib/tmpfiles.d/postfix.conf"
 entries = [
     "d /var/spool/mail 1777 root root - -"
 ]
+
+[[SystemdTmpfilesWhitelist]]
+package = "snapd"
+bugs = ["bsc#1261739"]
+note = "pre-creation of /tmp/snap-private-tmp during boot"
+path = "/usr/lib/tmpfiles.d/snapd.conf"
+entries = [
+    "D! /tmp/snap-private-tmp 0700 root root -"
+]
