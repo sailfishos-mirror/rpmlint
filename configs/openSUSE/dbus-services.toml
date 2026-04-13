@@ -619,7 +619,7 @@ hash = "c8784129137498425fb70ddd5d2efe24723b522794ea942ab9d0dd463bd65d58"
 package = "systemd-container"
 type = "dbus"
 note = "imported from rpmlint1 DBUSServices.WhiteList"
-bugs = ["bsc#828207", "bsc#1192033", "bsc#1257388", "bsc#1255368"]
+bugs = ["bsc#828207", "bsc#1192033", "bsc#1257388", "bsc#1255368", "bsc#1259318"]
 [[FileDigestGroup.digests]]
 path = "/usr/share/dbus-1/system-services/org.freedesktop.machine1.service"
 digester = "shell"
@@ -633,7 +633,7 @@ hash = "ba1ed5dc253c52e7664fdd5a8e92016ab4d3ebacd444f9f51fcac7ea0a8e3f9b"
 package = "systemd-container"
 type = "dbus"
 note = "imported from rpmlint1 DBUSServices.WhiteList"
-bug = "bsc#964935"
+bugs = ["bsc#964935", "bsc#1259318"]
 [[FileDigestGroup.digests]]
 path = "/usr/share/dbus-1/system-services/org.freedesktop.import1.service"
 digester = "shell"
@@ -641,7 +641,7 @@ hash = "7abbbe8d99e3134d7cb0e93f657671f80ab430cf06259a1bb07d0de0142e7e6f"
 [[FileDigestGroup.digests]]
 path = "/usr/share/dbus-1/system.d/org.freedesktop.import1.conf"
 digester = "xml"
-hash = "9c6f8a5703892843b4b9386ad5ce2ba264e35cf98e5af3d6b032df55bb2d4b0c"
+hash = "426f75e9a68216b346ba6421a35b2d0645b3fb52a2865328e351959193ffddb3"
 
 [[FileDigestGroup]]
 package = "geoclue2"
@@ -1339,12 +1339,12 @@ hash = "20dbcf394e1f6cf471c4a397311eb81e364094915e8766c9811408918f3eeaa2"
 [[FileDigestGroup]]
 package  = "systemd-experimental"
 note     = "update management of operating system assets like containers"
-bug      = "bsc#1237106"
+bugs     = ["bsc#1237106", "bsc#1259318"]
 type     = "dbus"
 [[FileDigestGroup.digests]]
 path     = "/usr/share/dbus-1/system.d/org.freedesktop.sysupdate1.conf"
 digester = "xml"
-hash     = "92233ffa14abcd0b21710963d67ce86f4ea4acd3efa52474d386800b3cc7646c"
+hash     = "db654b66f9731235bc34eabd313146ce67f87ba1a4870b61c6efb5ef669bd3b1"
 [[FileDigestGroup.digests]]
 path     = "/usr/share/dbus-1/system-services/org.freedesktop.sysupdate1.service"
 digester = "shell"
